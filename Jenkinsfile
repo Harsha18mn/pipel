@@ -27,6 +27,7 @@ pipeline {
      			//agent any
 			parallel {
 				stage('deploy1') {
+					agent {label 'tag1'}
 					steps {
 						sh '''
 						sleep 15
@@ -35,6 +36,7 @@ pipeline {
 					}
 				}
 				stage('deploy2') {
+					agent {label 'tag2'}
 					steps {
 						sh '''
 						sleep 15
@@ -43,6 +45,7 @@ pipeline {
 					}
 				}
 				stage('deploy3') {
+					agent {label 'mast'}
 					steps {
 						sh '''
 						sleep 15
