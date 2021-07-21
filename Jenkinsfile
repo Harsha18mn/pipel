@@ -24,7 +24,7 @@ pipeline {
 		}
 		
 		stage('DEPLOY') {
-     			agent {label 'tag1'}
+     			agent any
 			parallel {
 				stage('deploy1') {
 					steps {
